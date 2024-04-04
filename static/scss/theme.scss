@@ -1,0 +1,21 @@
+@import "../bootstrap/scss/functions";
+
+$light: #f8fcfc;
+$dark: #000000;
+$primary: #e80c0c;
+$secondary: #cb4b0f;
+$info: #4c00ff;
+$success: #10a103;
+$warning: #f7c104;
+$danger: #e92500; 
+
+@font-face {
+    font-family: "johnston100-regular";
+    src: url("\\static\\font\\Johnston100-Regular.woff2")
+}
+
+$font-family-base: johnston100-regular, monospace, sans-serif;
+
+@import "../bootstrap/scss/bootstrap";
+@import "./variables_dark";
+

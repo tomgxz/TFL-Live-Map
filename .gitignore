@@ -1,0 +1,7 @@
+*.bat
+
+/static/bootstrap
+/static/css
+/static/js/build
+
+.ignore

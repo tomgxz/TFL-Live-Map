@@ -76,6 +76,17 @@ $line-color-trams:          #7AC143;
     }
 }
 
+@mixin station_visible {
+    &.station-semichange,
+    &.station-interchange-single,
+    &.station-interchange-internal,
+    &.station-stepfree-train,
+    &.station-stepfree-platform,
+    &.line-tick { 
+        @include svg_visible 
+    }
+}
+
 // STYLES
 
 body {
@@ -185,9 +196,16 @@ body {
     .line-main, 
     .line-tick,
     .line-tunnel,
+
+    .station-semichange,
+    .station-interchange-single,
+    .station-interchange-internal,
+    .station-stepfree-train,
+    .station-stepfree-platform,
+
     .grid-wrapper,
     .river-wrapper,
-    .interchanges-wrapper,
+
     .stationnames-wrapper .stationnames-backgrounds,
     .stationnames-wrapper .stationnames { 
         @include svg_hidden 
@@ -224,102 +242,119 @@ body {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .thameslink { @include line_visible }
         }
+        .thameslink { @include station_visible }
     }
 
     &.elizabeth {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .elizabeth { @include line_visible }
         }
+        .elizabeth { @include station_visible }
     }
 
     &.tram {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .tram { @include line_visible }
         }
+        .tram { @include station_visible }
     }
 
     &.cablecar {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .cablecar { @include line_visible }
         }
+        .cablecar { @include station_visible }
     }
 
     &.dlr {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .dlr { @include line_visible }
         }
+        .dlr { @include station_visible }
     }
 
     &.overground {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .overground { @include line_visible }
         }
+        .overground { @include station_visible }
     }
 
     &.wc {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .wc { @include line_visible }
         }
+        .wc { @include station_visible }
     }
 
     &.bakerloo {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .bakerloo { @include line_visible }
         }
+        .bakerloo { @include station_visible }
     }
 
     &.jubilee {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .jubilee { @include line_visible }
         }
+        .jubilee { @include station_visible }
     }
 
     &.victoria {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .victoria { @include line_visible }
         }
+        .victoria { @include station_visible }
     }
 
     &.northern {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .northern { @include line_visible }
         }
+        .northern { @include station_visible }
     }
 
     &.piccadilly {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .piccadilly { @include line_visible }
         }
+        .piccadilly { @include station_visible }
     }
 
     &.central {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .central { @include line_visible }
         }
+        .central { @include station_visible }
     }
 
     &.hc {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .hc { @include line_visible }
         }
+        .hc { @include station_visible }
     }
 
     &.circle {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .circle { @include line_visible }
         }
+        .circle { @include station_visible }
     }
 
     &.district {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .district { @include line_visible }
         }
+        .district { @include station_visible }
     }
 
     &.metropolitan {
         .lines-wrapper, .lines-ticks-above-wrapper { 
             .metropolitan { @include line_visible }
         }
+        .metropolitan { @include station_visible }
     }
 
     // #endregion

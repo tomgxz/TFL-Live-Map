@@ -185,9 +185,12 @@ body {
 
 .element-panel {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0;
+    right: 0;
+
     text-align: right;
+    backdrop-filter: blur(3px);
+    padding: 1rem;
 }
 
 // #endregion

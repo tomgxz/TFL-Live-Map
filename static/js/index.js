@@ -11,12 +11,19 @@ const toggles_wrapper = $("main .content-wrapper .toggle-panel"),
       toggle_el_showall = elements_wrapper.children(".showall"),
       toggle_el_hideall = elements_wrapper.children(".hideall"),
       
-      map = $("#map"),
-      map_svg = map.children("svg"),
+      map_el = $("#map"),
+      map_svg = map_el.children("svg"),
       trains_wrapper = map_svg.children("#TRAINS-WRAPPER"),
 
-      lines = ["bakerloo", "central", "circle", "district", "hc", "jubilee", "metropolitan", "northern", "piccadilly",
-        "victoria", "wc", "dlr", "cablecar", "overground", "elizabeth", "thameslink", "tram"];
+      lines = [
+        "bakerloo", "central", "circle", "district", "hc", "jubilee", "metropolitan", "northern", "piccadilly",
+        "victoria", "wc", "dlr", "cablecar", "overground", "elizabeth", "thameslink", "tram"],
+
+      linecolors = {
+        "bakerloo": "#B06010", "central": "#EE3124", "circle": "#FFD200", "district": "#00853F", "hc": "#F386A1", 
+        "jubilee": "#949CA1", "metropolitan": "#97005E", "northern": "#000000", "piccadilly": "#1C3F94",
+        "victoria": "#009DDC", "wc": "#86CEBC", "dlr": "#00B1B0", "cablecar": "#E31937", "overground": "#F58025", 
+        "elizabeth": "#1C3F94", "thameslink": "#D385A9", "tram": "#7AC143"};
 
 var active_trains = {},
 
@@ -28,11 +35,11 @@ var active_trains = {},
 const toggle_fn_stations = () => {
   stationsEnabled = !stationsEnabled
 
-  map.toggleClass("stations")
+  map_el.toggleClass("stations")
   toggle_el_stations.toggleClass("enabled")
 
   if (!stationsEnabled) {
-    map.removeClass("stationnames","stepfree")
+    map_el.removeClass("stationnames","stepfree")
     toggle_el_stationnames.removeClass("enabled")
     toggle_el_stepfree.removeClass("enabled")
 
@@ -44,11 +51,11 @@ const toggle_fn_stations = () => {
 const toggle_fn_stationnames = () => {
   stationNamesEnabled = !stationNamesEnabled
 
-  map.toggleClass("stationnames")
+  map_el.toggleClass("stationnames")
   toggle_el_stationnames.toggleClass("enabled")
 
   if (stationNamesEnabled) {
-    map.addClass("stations")
+    map_el.addClass("stations")
     toggle_el_stations.addClass("enabled")
     stationsEnabled = true
   }
@@ -57,11 +64,11 @@ const toggle_fn_stationnames = () => {
 const toggle_fn_stepfree = () => {
   stepfreeEnabled = !stepfreeEnabled
 
-  map.toggleClass("stepfree")
+  map_el.toggleClass("stepfree")
   toggle_el_stepfree.toggleClass("enabled")
 
   if (stepfreeEnabled) {
-    map.addClass("stations")
+    map_el.addClass("stations")
     toggle_el_stations.addClass("enabled")
     stationsEnabled = true
   }
@@ -70,19 +77,19 @@ const toggle_fn_stepfree = () => {
 // ------
 
 const toggle_fn_farezones = () => {
-  map.toggleClass("farezones")
+  map_el.toggleClass("farezones")
   toggle_el_farezones.toggleClass("enabled")
 }
 
 const toggle_fn_river = () => {
-  map.toggleClass("river")
+  map_el.toggleClass("river")
   toggle_el_river.toggleClass("enabled")
 }
 
 // ------
 
-const toggle_fn_showall = () => { map.addClass(lines) }
-const toggle_fn_hideall = () => {  map.removeClass(lines) }
+const toggle_fn_showall = () => { map_el.addClass(lines) }
+const toggle_fn_hideall = () => {  map_el.removeClass(lines) }
 
 
 $(window).on("load", function () {
@@ -97,7 +104,7 @@ $(window).on("load", function () {
     // linetoggle.toggleClass("enabled")
 
     linetoggle.click(function () {
-      map.toggleClass(line)
+      map_el.toggleClass(line)
       $(this).toggleClass("enabled")
     })
   }

@@ -1,4 +1,3 @@
-
 const map_station_name = (s, line) => {
     s = s.trim()
     s = s.replace('^Heathrow$', 'Heathrow Terminals 1, 2, 3')

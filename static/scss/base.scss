@@ -215,7 +215,7 @@ body {
     .station-interchange-internal,
     .station-stepfree-train,
     .station-stepfree-platform,
-    
+
     .station-stepfree-wrapper,
 
     .grid-wrapper,
@@ -392,6 +392,20 @@ body {
     }
 
 }
+
+// #endregion
+
+// TRAINS STYLING
+// #region
+
+#TRAINS-WRAPPER {
+    .trains {
+        .train {
+            fill: var(--line-color)
+        }
+    }
+}
+
 
 // #endregion
 
